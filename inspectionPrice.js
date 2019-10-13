@@ -37,7 +37,7 @@ const returnPrice = () => {
     inspectionPrice = 750
   } else {
     alert('Please enter a number.')
-    return;
+    return false;
   };
 
   // Find discount
@@ -53,14 +53,19 @@ const returnPrice = () => {
   // console.log(finalPrice)
 
   //Print the total to the DOM.
-  $('#pricingReturn').html(`<hr><p><strong>The base price for your inspection is:</strong></p><h2 class="bigPrice">$${finalPrice}<h2>`)
+  $('#pricingReturn').html(`<p><strong>The base price for your inspection is:</strong></p><h2 class="bigPrice">$${finalPrice}<h2>`)
 };
 
 $(document).ready(() => {
   $('#submitButtonSQFT').on("click", () => {
-    returnPrice()
+    // returnPrice()
+    if (returnPrice() !== false) {
     $('.inspectionPricingInput').hide();
     $('#resetPriceCalc').show();
+    $('#pricingReturn').fadeIn(500);
+    $('.shape-bg').addClass('shape-move');
+    $('.shape-bg2').addClass('shape-move2');
+    }
   });
   $('#HomeSquareFootage').on('focus', () => {
     $('#measureUnit').fadeIn(400);
@@ -71,8 +76,12 @@ $(document).ready(() => {
     $(event.currentTarget).toggleClass('orangeBackground')
   });
   $('#resetPriceCalc').on('click', () => {
+
     $('.inspectionPricingInput').show();
     $('#resetPriceCalc').hide();
     $('#pricingReturn').html('');
+    $('#pricingReturn').hide();
+    $('.shape-bg').removeClass('shape-move');
+    $('.shape-bg2').removeClass('shape-move2');
   });
 }); //end of jquery

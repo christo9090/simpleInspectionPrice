@@ -7,8 +7,9 @@
 
   <div class="mainContainer">
     <div class="inspectionPricingText">
+      <i id="upper-corner-icon" class="fas fa-search-dollar"></i>
       <h2>Quick Quote For Your Inspection Price</h2>
-      <hr>
+      <!-- <hr> -->
       <p>Our base inspection price is based on square footage of the home. Enter the square footage of the property to find the base price for your inspection.<br><br><i>This price does not include add-on inspections.</i></p>
     </div>
     <div class="inspectionPricingInput">
@@ -26,7 +27,7 @@
           <label for="newConst">  Is a brand new home?</label>
         </div>
         <div>
-        <button id="submitButtonSQFT" name="submitbutton" type="submit">Submit Square Footage</button>
+        <button id="submitButtonSQFT" name="submitbutton" type="submit">Find My Price</button>
         </div>
       </form>
       <br>
@@ -35,8 +36,11 @@
     <div id="pricingReturn">
 
     </div>
+    <br>
     <button id="resetPriceCalc" type="button" name="resetPriceCalc">Start Over</button>
   </div>
+  <div class="shape-bg"></div>
+  <div class="shape-bg2"></div>
 
   <script src="./scripts/node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
   <script src="./inspectionPrice.js" type="text/javascript"></script>
