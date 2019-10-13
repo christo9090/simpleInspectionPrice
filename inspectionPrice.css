@@ -1,0 +1,162 @@
+.mainContainer {
+  font-family: sans-serif;
+  max-width: 300px;
+  background-color: #f3f3f3;
+  padding: 35px;
+}
+input[type=text] {
+  border: none;
+	border-bottom: 1px solid #ddd;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+  background: none;
+  /* width: 100%; */
+  text-indent: 16px;
+}
+input[type=text]:focus{
+  border-bottom: 2px solid #d75400;
+  -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+/* Checkbox style */
+.formRow input[type=checkbox] {
+  opacity: 0;
+  cursor: pointer;
+  /* position: absolute; */
+  margin-bottom: 5px;
+}
+
+.formRow label::before{
+    content: "";
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border: 1px solid;
+    border-radius: 5px;
+
+}
+.formRow label::after {
+    content: "";
+    display: inline-block;
+    height: 5px;
+    width: 9px;
+    border-left: 2px solid #FFF;
+    border-bottom: 2px solid #FFF;
+    transform: rotate(-45deg);
+}
+.formRow label {
+    position: relative;
+}
+.formRow label::before,
+.formRow label::after {
+    position: absolute;
+}
+/*Outer-box*/
+.formRow label::before {
+    top: 0px;
+    left: -20px;
+}
+/*Checkmark*/
+.formRow label::after {
+    left: -17px;
+    top: 4px;
+}
+/*Hide the checkmark by default*/
+.formRow input[type="checkbox"] + label::after {
+    content: none;
+}
+/*Unhide the checkmark on the checked state*/
+.formRow input[type="checkbox"]:checked + label::after {
+    content: "";
+}
+
+/*Unhide the checkmark on the checked state*/
+.formRow input[type="checkbox"]:checked + label::before {
+    background-color: transparent;
+    border-color: transparent;
+
+}
+
+/* other shit */
+.formRow {
+  padding: 10px 0px;
+  margin-bottom: 5px;
+}
+.formRow i {
+  position: absolute;
+  padding: 10px 10px 10px 2px;
+  color: #333;
+}
+.inspectionPricingInput {
+  max-width: 220px;
+}
+.orangeBackground {
+  background-color: #d75400;
+  border: 0px solid #d75400;
+  border-radius: 10px;
+  color: white;
+  padding-left: 8px;
+  box-shadow: 2px 2px 6px rgba(181, 181, 181, 0.81);
+  -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+#submitButtonSQFT {
+  background-color: transparent;
+  border: 2px solid #333;
+  border-radius: 10px;
+  color: #333;
+  padding: 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  outline: none;
+
+}
+#submitButtonSQFT:hover {
+  background-color: rgba(51, 51, 51, 0.7);
+  border: 2px solid rgba(51, 51, 51, 0.7);
+  border-radius: 10px;
+  color: #FFF;
+  box-shadow: 2px 2px 6px rgba(181, 181, 181, 0.81);
+  -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+.bigPrice {
+  color: #d75400;
+  line-height: 0;
+  font-size: 55px;
+}
+#measureUnit {
+  margin-left: -20px;
+  font-size: 10px;
+  color: rgba(51, 51, 51, 0.7);
+  font-style: italic;
+  display: none;
+}
+#resetPriceCalc {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: none;
+}
+#resetPriceCalc::before {
+  content: "";
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  border-left: 1px solid #333;
+  border-bottom: 1px solid #333;
+  transform: rotate(225deg);
+  margin-right: 8px;
+}

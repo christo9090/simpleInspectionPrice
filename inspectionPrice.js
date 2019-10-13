@@ -7,7 +7,7 @@ const returnPrice = () => {
   let discountPrice = 0;
 
   // Find base inspection price.
-  if ($sqft <= 1000 ) {
+  if ($sqft <= 1000 && $sqft > 1) {
     inspectionPrice = 340
   } else if ($sqft > 1000 && $sqft <=1500) {
     inspectionPrice = 355
@@ -37,6 +37,7 @@ const returnPrice = () => {
     inspectionPrice = 750
   } else {
     alert('Please enter a number.')
+    return;
   };
 
   // Find discount
@@ -49,14 +50,29 @@ const returnPrice = () => {
   };
   //find total
   let finalPrice = inspectionPrice - discountPrice
-  console.log(finalPrice)
+  // console.log(finalPrice)
 
   //Print the total to the DOM.
-  $('#pricingReturn').html(`<p>The base price for your inspection is $${finalPrice}.</p>`)
+  $('#pricingReturn').html(`<hr><p><strong>The base price for your inspection is:</strong></p><h2 class="bigPrice">$${finalPrice}<h2>`)
 };
 
 $(document).ready(() => {
   $('#submitButtonSQFT').on("click", () => {
     returnPrice()
+    $('.inspectionPricingInput').hide();
+    $('#resetPriceCalc').show();
+  });
+  $('#HomeSquareFootage').on('focus', () => {
+    $('#measureUnit').fadeIn(400);
+
+  });
+  $('.priceCheckbox').on('click', (event) => {
+    $(event.currentTarget).parent().toggleClass('orangeBackground')
+    $(event.currentTarget).toggleClass('orangeBackground')
+  });
+  $('#resetPriceCalc').on('click', () => {
+    $('.inspectionPricingInput').show();
+    $('#resetPriceCalc').hide();
+    $('#pricingReturn').html('');
   });
 }); //end of jquery

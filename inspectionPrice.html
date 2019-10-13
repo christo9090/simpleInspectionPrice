@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <head>
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="./inspectionPrice.css" type="text/css">
+
 </head>
 <body>
 
-  <div>
+  <div class="mainContainer">
     <div class="inspectionPricingText">
       <h2>Quick Quote For Your Inspection Price</h2>
-      <p>Our base inspection price is based on square footage of the home. Enter the square footage of the property to find the base price for your inspection. <i>This price does not include add-on inspections.</i></p>
+      <hr>
+      <p>Our base inspection price is based on square footage of the home. Enter the square footage of the property to find the base price for your inspection.<br><br><i>This price does not include add-on inspections.</i></p>
     </div>
     <div class="inspectionPricingInput">
       <form class="IP-mainform" autocomplete="off" onsubmit="return false">
-        <input id="HomeSquareFootage" type="text" name="sqft" value="" placeholder="Square Footage"><br>
-        <input id="condoCheck" type="checkbox" name="condo" value="condo">Is this a condo?<br>
-        <input id="newConst" type="checkbox" name="newConst" value="newConst">Is a brand new home?<br>
+        <div class="formRow">
+          <i class="fas fa-ruler-combined"></i>
+          <input id="HomeSquareFootage" type="text" name="sqft" value="" placeholder="Square Footage" onfocus="this.placeholder = ''"><span id="measureUnit">sqft</span>
+        </div>
+        <div class="formRow" id="checkbuttonID">
+          <input class="priceCheckbox" id="condoCheck" type="checkbox" name="condo" value="condo">
+          <label for="condoCheck">  Is this a condo?</label>
+        </div>
+        <div class="formRow" id="checkbuttonID">
+          <input class="priceCheckbox" id="newConst" type="checkbox" name="newConst" value="newConst">
+          <label for="newConst">  Is a brand new home?</label>
+        </div>
+        <div>
         <button id="submitButtonSQFT" name="submitbutton" type="submit">Submit Square Footage</button>
+        </div>
       </form>
       <br>
 
     </div>
     <div id="pricingReturn">
+
     </div>
+    <button id="resetPriceCalc" type="button" name="resetPriceCalc">Start Over</button>
   </div>
 
   <script src="./scripts/node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
   <script src="./inspectionPrice.js" type="text/javascript"></script>
+  <script src="https://kit.fontawesome.com/b0e66517b0.js" crossorigin="anonymous"></script>
 
 </body>
