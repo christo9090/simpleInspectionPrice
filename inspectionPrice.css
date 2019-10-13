@@ -175,7 +175,7 @@ input[type=text]:focus{
   padding: 15px 30px;
   border: 0px solid #FFF;
   border-radius: 10px;
-  box-shadow: -2px 0px 6px rgba(181, 181, 181, 0.31);
+  box-shadow: -2px 0px 9px rgba(181, 181, 181, 0.51);
   text-align: center;
   display: none;
   /* -webkit-transition: all 0.3s ease-out;
